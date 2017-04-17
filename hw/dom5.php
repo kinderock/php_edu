@@ -1,0 +1,7 @@
+<?php
+  $var_str = 'abc';
+  $var_int = 34;
+  $var_float = 34.5;
+  $var_bool = false;
+  $var_null = null;
+  $var_array = array();
