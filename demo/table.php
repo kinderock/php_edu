@@ -1,3 +1,0 @@
-<?php
-$cols;
-$rows;
