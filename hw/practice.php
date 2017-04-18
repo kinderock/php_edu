@@ -162,7 +162,7 @@
 	// string - возвращает 1
 	// int - возвращает 1
 	// null - возвращает 0
-	function myCount($array)
+	function myCount($array, $mode = 0)
 	{
 
 		// Проверка на NULL
@@ -179,13 +179,23 @@
 
 		// В цикле увеличиваем счетчик на 1 для каждого элемента массива
 		foreach ($array as $value) {
+			// Если мы передали флаг проверки дочерних элементов
+			// и эти дочерние элементы существуют, то мы запускаем рекурсию
+			if ( $mode === 1 && is_array($value) ) {
+				$count += myCount($value, 1);
+			}
 			$count++;
 		}
 
 		return $count;
 	}
 
-	echo myCount($var_array);
+	// echo var_dump($var_array);
+	echo count($var_arr, 1);
+	echo "<br>";
+	echo myCount($var_arr, 1);
+	echo "<br>";
+	echo "<hr>";
 	echo "<br>";
 
 
