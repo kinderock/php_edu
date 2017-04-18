@@ -219,12 +219,14 @@
 		// --------------------------------------------------
 		// V2 - проверка на false через строгое равенство
 		// в таком случае не нужно дополнительно исключать 0
-		if ( is_null($string) || $string === false ) {
+		// if ( is_null($string) || $string === false ) { // Проверка через функцию is_null
+			if ( $string === null || $string === false ) {
 			return 0;
 
 		// Проверка на существование переменной и что переменная boolean,
 		// иначе все время будет возвращать true, что бы не пришло (кроме 1 условия)
-		} else if ( $string && gettype($string) === 'boolean' ){
+		// } else if ( $string && gettype($string) === 'boolean' ){ // Вариант проверки на существование переменной и на тип данных
+		} else if ( $string === 'true' ){
 			return 1;
 
 		// Исключаем массив
@@ -253,5 +255,7 @@
 		return $i;
 	}
 
-	echo myStrlen($var_int);
+	echo myStrlen($var_float);
+	echo "<br>";
+	echo strlen($var_float);
 	echo "<br>";
