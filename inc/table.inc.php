@@ -1,7 +1,7 @@
 <?php
-  $cols  = (isset($_POST['cols']))  ? $_POST['cols']  : 10;
-  $rows  = (isset($_POST['rows']))  ? $_POST['rows']  : 10;
-  $color = (isset($_POST['color'])) ? $_POST['color'] : 'yellow';
+  $cols  = (isset($_POST['cols']))  ? abs((int)$_POST['cols'])          : 10;
+  $rows  = (isset($_POST['rows']))  ? abs((int)$_POST['rows'])          : 10;
+  $color = (isset($_POST['color'])) ? strip_tags(trim($_POST['color'])) : 'yellow';
 ?>
 
 <form action='' method="post">
