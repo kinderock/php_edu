@@ -1,22 +1,3 @@
-<?php
-/*
-1G
-8M
-1024K
-4096
-*/
-$size = ini_get("post_max_size");
-$int_size = (int)$size;
-
-switch ($size{strlen($size) - 1}) {
-	case 'G':
-		$int_size *= 1024;
-	case 'M':
-		$int_size *= 1024;
-	case 'K':
-		$int_size *= 1024;	
-}
-?>
 <!DOCTYPE html>
 <html>
 
@@ -40,22 +21,7 @@ switch ($size{strlen($size) - 1}) {
     <h1>Обратная связь</h1>
     <!-- Заголовок -->
     <!-- Область основного контента -->
-    <h3>Адрес</h3>
-    <p>123456 Москва, Малый Американский переулок 21</p>
-    <h3>Задайте вопрос</h3>
-    <form action='' method='post'>
-      <label>Тема письма: </label>
-      <br />
-      <input name='subject' type='text' size="50" />
-      <br />
-      <label>Содержание: </label>
-      <br />
-      <textarea name='body' cols="50" rows="10"></textarea>
-		<br><?php echo "Максимальный объем: $int_size байт.";?>
-      <br />
-      <br />
-      <input type='submit' value='Отправить' />
-    </form>
+		<?php require_once './inc/contact.inc.php'; ?>
     <!-- Область основного контента -->
   </div>
   <div id="nav">

@@ -28,19 +28,19 @@ $leftMenu = array(
 	),
 	'2' => array(
 		'link' => 'О нас',
-		'href' => 'about.php',
+		'href' => 'index.php?id=about',
 	),
 	'3' => array(
 		'link' => 'Контакты',
-		'href' => 'contact.php',
+		'href' => 'index.php?id=contact',
 	),
 	'4' => array(
 		'link' => 'Таблица умножения',
-		'href' => 'table.php',
+		'href' => 'index.php?id=table',
 	),
 	'5' => array(
 		'link' => 'Калькулятор',
-		'href' => 'calc.php',
+		'href' => 'index.php?id=calc',
 	),
 );
 
@@ -49,3 +49,17 @@ $leftMenu = array(
 $cols = 10;
 $rows = 10;
 $color = '#ff9797';
+
+
+// Проверка размера файла
+$size = ini_get("post_max_size");
+$int_size = (int)$size;
+
+switch ($size{strlen($size) - 1}) {
+	case 'G':
+		$int_size *= 1024;
+	case 'M':
+		$int_size *= 1024;
+	case 'K':
+		$int_size *= 1024;
+}

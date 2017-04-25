@@ -1,1 +1,1 @@
-<h1><?php echo "$welcome, Гость!";?></h1>
+<h1><?php echo $header; ?></h1>
