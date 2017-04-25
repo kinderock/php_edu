@@ -1,5 +1,5 @@
 <?php
-	function drawTable($cols=10, $rows=10, $color='ff0000')
+	function drawTable($rows=10, $cols=10, $color='ff0000')
 	{
 		echo "<table border=\"1\" width=\"200\">";
 

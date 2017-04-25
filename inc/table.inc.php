@@ -23,5 +23,5 @@
 <br>
 
 <!-- Таблица -->
-<?php drawTable($cols, $rows, $color);?>
+<?php drawTable($rows, $cols, $color);?>
 <!-- Таблица -->
