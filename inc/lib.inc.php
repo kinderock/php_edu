@@ -18,6 +18,7 @@
 		echo "</table>";
 	}
 
+
 	function drawMenu($leftMenu, $vertical=true)
 	{
 		if ($vertical) {
