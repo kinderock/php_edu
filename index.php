@@ -1,80 +1,51 @@
 <?php
-	require_once './inc/lib.inc.php';
-	require_once './inc/data.inc.php';
-
-	$id = '';
-	if (isset($_GET['id'])) {
-		$id = strtolower(strip_tags(trim($_GET['id'])));
-	}
-
-	switch($id){
-		case 'about':
-			$title = 'О сайте';
-			$header = 'О нашем сайте';
-			$content = './inc/about.inc.php';
-			break;
-
-		case 'contact':
-			$title = 'Контакты';
-			$header = 'Обратная связь';
-			$content = './inc/contact.inc.php';
-			break;
-
-		case 'table':
-			$title = 'Таблица умножения';
-			$header = 'Таблица умножения';
-			$content = './inc/table.inc.php';
-			break;
-
-		case 'calc':
-			$title = 'Он-лайн калькулятор';
-			$header = 'Калькулятор';
-			$content = './inc/calc.inc.php';
-			break;
-
-		default:
-			$title = 'Сайт нашей школы';
-			$header = "$welcome, Гость!";
-			$content = './inc/index.inc.php';
-	}
+	require "inc/headers.inc.php";
 ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+	<head>
+		<title><?= $title?></title>
+		<meta http-equiv="content-type"
+			content="text/html;charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="inc/style.css" />
+	</head>
+	<body>
 
-<!DOCTYPE html>
-<html>
+		<div id="header">
+			<!-- Верхняя часть страницы -->
+			<img src="logo.gif" width="187" height="29" alt="Наш логотип" class="logo" />
+			<span class="slogan">обо всём сразу</span>
+			<!-- Верхняя часть страницы -->
+		</div>
 
-<head>
-	<title><?php echo $title; ?></title>
-	<meta charset="utf-8" />
-	<link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-
-	<div id="header">
-		<!-- Верхняя часть страницы -->
-		<img src="logo.gif" width="187" height="29" alt="Наш логотип" class="logo" />
-		<span class="slogan">приходите к нам учиться</span>
-		<!-- Верхняя часть страницы -->
-	</div>
-
-	<div id="content">
-		<!-- Заголовок -->
-		<?php require_once './inc/top.inc.php'; ?>
-		<!-- Заголовок -->
-		<!-- Область основного контента -->
-		<?php require_once $content;?>
-		<!-- Область основного контента -->
-	</div>
-	<div id="nav">
-		<!-- Навигация -->
-		<?php require_once './inc/menu.inc.php'; ?>
-		<!-- Навигация -->
-	</div>
-	<div id="footer">
-		<!-- Нижняя часть страницы -->
-		<?php require_once './inc/bottom.inc.php'; ?>
-		<!-- Нижняя часть страницы -->
-	</div>
-</body>
-
+		<div id="content">
+			<!-- Заголовок -->
+			<h1><?= $header; ?></h1>
+			<!-- Заголовок -->
+			<!-- Область основного контента -->
+			<?php
+				include 'inc/routing.inc.php';
+			?>	
+			<!-- Область основного контента -->
+		</div>
+		<div id="nav">
+			<!-- Навигация -->
+			<h2>Навигация по сайту</h2>
+			<ul>
+				<li><a href='index.php'>Домой</a></li>
+				<li><a href='index.php?id=contact'>Контакты</a></li>
+				<li><a href='index.php?id=about'>О нас</a></li>
+				<li><a href='index.php?id=info'>Информация</a></li>
+				<li><a href='test/index.php'>Он-лайн тест</a></li>
+				<li><a href='index.php?id=gbook'>Гостевая книга</a></li>
+				<li><a href='eshop/catalog.php'>Магазин</a></li>
+			</ul>
+			<!-- Навигация -->
+		</div>
+		<div id="footer">
+			<!-- Нижняя часть страницы -->
+			&copy; Супер-мега сайт, 2000 - <?= date('Y')?>
+			<!-- Нижняя часть страницы -->
+		</div>
+	</body>
 </html>
