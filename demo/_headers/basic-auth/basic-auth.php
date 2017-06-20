@@ -3,31 +3,31 @@ $login = $_SERVER["PHP_AUTH_USER"];
 $password = $_SERVER["PHP_AUTH_PW"];
 
 if ($login=='admin' and $password=='1234'): 
-	// Если пользователь прошел аутентификацию
+	// Р•СЃР»Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РїСЂРѕС€РµР» Р°СѓС‚РµРЅС‚РёС„РёРєР°С†РёСЋ
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-	<title>Базовая аутентификация</title>
+	<title>Р‘Р°Р·РѕРІР°СЏ Р°СѓС‚РµРЅС‚РёС„РёРєР°С†РёСЏ</title>
 </head>
 <body>
-<h1>Базовая аутентификация - RFC2617</h1>
-Ваш логин: <?=$login?><br>
-Ваш логин: <?=$password?><br>
+<h1>Р‘Р°Р·РѕРІР°СЏ Р°СѓС‚РµРЅС‚РёС„РёРєР°С†РёСЏ - RFC2617</h1>
+Р’Р°С€ Р»РѕРіРёРЅ: <?=$login?><br>
+Р’Р°С€ Р»РѕРіРёРЅ: <?=$password?><br>
 </body>
 </html>
 <? else: 
-	// Пользователь не прошел аутентификацию!
+	// РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ РЅРµ РїСЂРѕС€РµР» Р°СѓС‚РµРЅС‚РёС„РёРєР°С†РёСЋ!
 	header("HTTP/1.0 401 Unauthorized");
-	header("WWW-Authenticate: Basic realm=\"Мой сайт\"");
+	header("WWW-Authenticate: Basic realm=\"РњРѕР№ СЃР°Р№С‚\"");
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-	<title>Доступ запрещен</title>
+	<title>Р”РѕСЃС‚СѓРї Р·Р°РїСЂРµС‰РµРЅ</title>
 </head>
 <body>
-<h1>Доступ запрещен</h1>
+<h1>Р”РѕСЃС‚СѓРї Р·Р°РїСЂРµС‰РµРЅ</h1>
 </body>
 </html>
 <? endif ?>

@@ -1,9 +1,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-	<title>Доступ запрещен</title>
+	<title>Р”РѕСЃС‚СѓРї Р·Р°РїСЂРµС‰РµРЅ</title>
 </head>
 <body>
-<h1>Доступ запрещен</h1>
+<h1>Р”РѕСЃС‚СѓРї Р·Р°РїСЂРµС‰РµРЅ</h1>
 </body>
 </html>
