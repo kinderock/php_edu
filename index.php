@@ -1,5 +1,6 @@
 <?php
 	require "inc/headers.inc.php";
+	require "inc/cookie.inc.php";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
@@ -20,12 +21,21 @@
 
 		<div id="content">
 			<!-- Заголовок -->
+			<blockquote>
+			<?php
+				if ($visitCounter === 1) {
+					print "Спасибо, что зашли на огонек";
+				} else {
+					print "Вы зашли к нам $visitCounter раз<br>Последнее посещение: ".date("Y-m-d", $lastVisit);
+				}
+			?>
+			</blockquote>
 			<h1><?= $header; ?></h1>
 			<!-- Заголовок -->
 			<!-- Область основного контента -->
 			<?php
 				include 'inc/routing.inc.php';
-			?>	
+			?>
 			<!-- Область основного контента -->
 		</div>
 		<div id="nav">
