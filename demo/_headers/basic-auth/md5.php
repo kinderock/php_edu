@@ -2,16 +2,16 @@
 
 <html>
 <head>
-	<title>Хеширование MD5</title>
+	<title>РҐРµС€РёСЂРѕРІР°РЅРёРµ MD5</title>
 </head>
 
 <body>
-<h1>Хеширование MD5</h1>
+<h1>РҐРµС€РёСЂРѕРІР°РЅРёРµ MD5</h1>
 <?
 $str = $_GET["str"];
 ?>
 <form action="<?=$_SERVER["PHP_SELF"]?>">
-	Строка:
+	РЎС‚СЂРѕРєР°:
 	<input type="text" name="str" value="<?=$str?>">
 	<input type="submit" value="MD5">
 </form>

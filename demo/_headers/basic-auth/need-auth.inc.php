@@ -4,16 +4,16 @@ $password = $_SERVER["PHP_AUTH_PW"];
 
 if (!login_ok($login, $password)) {
 	header("HTTP/1.0 401 Unauthorized");
-	header("WWW-Authenticate: Basic realm=\"Ìîé ñàéò\"");
+	header("WWW-Authenticate: Basic realm=\"ÐœÐ¾Ð¹ ÑÐ°Ð¹Ñ‚\"");
 	include("access-deny.php");
 	exit;
 }
 
-// Ôóíêöèÿ ïðîâåðêè ïîëüçîâàòåëÿ
+// Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ¸ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ
 function login_ok($login, $password) {
 	// ROOT: 888
 	// Pupkin: Vasya
-	// Ìîðêîâêèí: MeGaPa$$w0rd
+	// ÐœÐ¾Ñ€ÐºÐ¾Ð²ÐºÐ¸Ð½: MeGaPa$$w0rd
 
 	$users = array(
 		"ROOT" => "0a113ef6b61820daa5611c870ed8d5ee",
